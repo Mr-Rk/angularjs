@@ -1,8 +1,30 @@
 <html>
     <head>
         <title>My angular app</title>
+        <script src="script/angular.min.js"></script>
+
+       <script>
+            var angularApp=angular.module("angularApp",[]);
+
+            var mycontroller=angularApp.controller("mycontroller",function($scope){
+                 $scope.name="ramkrushna";
+                  console.log("ramkurhna");
+            });
+
+       </script>
+
     </head>
-    <body>
+    <body ng-app="angularApp">
+
+        <h2>product price calculator</h2>
+        
+        <div ng-controller="mycontroller">
+
+            <pre>
+                Enter your name<input type="text" ng-model="name">
+            </pre>
         <h3>Two way data binding</h3>
+        {{name}}
+        </div>
     </body>
 </html>
